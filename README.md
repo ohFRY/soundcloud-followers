@@ -10,8 +10,8 @@ You want to know if people you follow on SoundCloud are following you back? Here
 ### INSTALLATION ###
 
 Add to your bookmark bar this code below:
+
 ```javascript: (function () { var jsCode = document.createElement('script'); jsCode.setAttribute('id', 'soundcloud-followers'); jsCode.setAttribute('src', 'https://raw.github.com/ohFRY/soundcloud-followers/master/sc-unfollowers.js'); document.body.appendChild(jsCode); }());
-```
 
 ### USAGE ###
 
