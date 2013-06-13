@@ -76,12 +76,12 @@ function getMyTabs(){
 
     while (flag < SoundcloudFollowers) {
         tabbb = getMyTab(tabbb, flag);
-        flag = flag + 198;
+        flag = flag + 198; //limit 198 because of API limit in the results
     }
     return tabbb;
 }
 
-function findfollower() {
+function findUnfollowers() {
     
 	var tab = getMyTabs();
     $('.usersList__item').each(function(key, value) {
@@ -96,4 +96,4 @@ function findfollower() {
     });
 
 }
-setTimeout(followerious, 1000);
+setTimeout(findUnfollowers, 1000);
