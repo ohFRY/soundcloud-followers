@@ -91,7 +91,7 @@ function findfollower() {
             if(tab[i].username == $('.userBadge__userNameLink', value).text()) found = true;
         }
         if (!found) {
-            $('.sc-truncate', value).append('<span style="color:#F33">don't follow you</span>');
+            $('.sc-truncate', value).append('<span style="color:#F33">not following you</span>');
         }
     });
 
