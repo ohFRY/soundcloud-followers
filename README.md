@@ -18,7 +18,7 @@ javascript: (function () { var jsCode = document.createElement('script'); jsCode
 
 ### USAGE ###
 
-Change the username by yours on the first line of the script. And run the script when you have loaded all your followers on https://soundcloud.com/{your username}/following
+Change the username by yours on the first line of the script. And run the script when you have loaded all your followers on https://soundcloud.com/{your-username}/following
 
 ### WARNING ###
 By executing this code, your browser might freeze the time to collect data. Sorry, I've been coding this very quickly and didn't really care about making this async.
