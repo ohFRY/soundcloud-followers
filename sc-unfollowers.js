@@ -110,7 +110,10 @@
     
     setTimeout(function() {
         var tab = getMyTabs();
-        setTimeout(findUnfollowers, 10000);
+        if(tab.length == SoundcloudFollowers-1) {
+            console.log("launched");
+            setTimeout(findUnfollowers, 1000);
+        }
     } ,1);
 
 //    var worker = new Worker(setTimeout(findUnfollowers, 1000));
