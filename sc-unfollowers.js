@@ -65,7 +65,7 @@
     	$.ajax({
         	url: 'http://api.soundcloud.com/users/' + SoundcloudUsername + '/followers.json?limit=199&offset='+offset+'&client_id=2062cfeb34e8085370a13162c547f4cc',
             dataType: 'json',
-            async: true,
+            async: false,
             success: function(data) {
                 tabb = $.merge(tab, data);
             }
