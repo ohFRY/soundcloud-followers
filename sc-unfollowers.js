@@ -43,57 +43,61 @@
  *
  * USAGE:   run this script when you are on https://soundcloud.com/{your username}/following
  */
-
-var SoundcloudUsername = "akerz";
-
-var SoundcloudFollowers;
-$.ajax({
-    url: 'http://api.soundcloud.com/users/'+SoundcloudUsername+'.json?&client_id=2062cfeb34e8085370a13162c547f4cc',
-    dataType: 'json',
-    async: false,
-    success: function(data) {
-        SoundcloudFollowers = data.followers_count;
-    }
-});
+(function () {
 
 
-function getMyTab(tab, offset){
-	var tabb;
-	$.ajax({
-    	url: 'http://api.soundcloud.com/users/' + SoundcloudUsername + '/followers.json?limit=199&offset='+offset+'&client_id=2062cfeb34e8085370a13162c547f4cc',
+
+    var SoundcloudUsername = "akerz";
+
+    var SoundcloudFollowers;
+    $.ajax({
+        url: 'http://api.soundcloud.com/users/'+SoundcloudUsername+'.json?&client_id=2062cfeb34e8085370a13162c547f4cc',
         dataType: 'json',
-        async: false,
+        async: true,
         success: function(data) {
-            tabb = $.merge(tab, data);
+            SoundcloudFollowers = data.followers_count;
         }
     });
-    return tabb;
-}
 
-function getMyTabs(){
-    var flag = 0;
-    var tabbb = [];
 
-    while (flag < SoundcloudFollowers) {
-        tabbb = getMyTab(tabbb, flag);
-        flag = flag + 198; //limit 198 because of API limit in the results
+    function getMyTab(tab, offset){
+    	var tabb;
+    	$.ajax({
+        	url: 'http://api.soundcloud.com/users/' + SoundcloudUsername + '/followers.json?limit=199&offset='+offset+'&client_id=2062cfeb34e8085370a13162c547f4cc',
+            dataType: 'json',
+            async: true,
+            success: function(data) {
+                tabb = $.merge(tab, data);
+            }
+        });
+        return tabb;
     }
-    return tabbb;
-}
 
-function findUnfollowers() {
-    
-	var tab = getMyTabs();
-    $('.usersList__item').each(function(key, value) {
-        var found = false;
-    	console.log(tab.length);
-        for(var i = 0; i < tab.length; i++) {
-            if(tab[i].username == $('.userBadge__userNameLink', value).text()) found = true;
-        }
-        if (!found) {
-            $('.sc-truncate', value).append('<span style="color:#F33">not following you</span>');
-        }
-    });
+    function getMyTabs(){
+        var flag = 0;
+        var tabbb = [];
 
-}
-setTimeout(findUnfollowers, 1000);
+        while (flag < SoundcloudFollowers) {
+            tabbb = getMyTab(tabbb, flag);
+            flag = flag + 198; //limit 198 because of API limit in the results
+        }
+        return tabbb;
+    }
+
+    function findUnfollowers() {
+        
+    	var tab = getMyTabs();
+        $('.usersList__item').each(function(key, value) {
+            var found = false;
+            for(var i = 0; i < tab.length; i++) {
+                if(tab[i].username == $('.userBadge__userNameLink', value).text()) found = true;
+            }
+            if (!found) {
+                $('.sc-truncate', value).append('<span style="color:#F33">not following back</span>');
+            }
+        });
+
+    }
+    setTimeout(findUnfollowers, 1000);
+
+})();
