@@ -47,8 +47,9 @@
 
 
 
-    var SoundcloudUsername = "akerz";
-    var tab = getMyTabs();
+    var SoundcloudUsername = getUsername();
+
+    console.log(SoundcloudUsername);
 
     var SoundcloudFollowers;
     $.ajax({
@@ -60,6 +61,12 @@
         }
     });
 
+
+    function getUsername(){
+        var a = location.pathname.split("/");
+        if ( a.length > 1 && a[1] == "mine" ) { return a; }
+        return null;
+    }
 
     function getMyTab(tab, offset){
     	var tabb;
@@ -92,7 +99,7 @@
 
             for(var i = 0; i < tab.length; i++) {
                 
-                console.log(tab[i].username);
+                
                 if(tab[i].username == $('.userBadge__userNameLink', value).text()) found = true;
             }
             if (!found) {
@@ -101,7 +108,9 @@
         });
 
     }
-
-    setTimeout(findUnfollowers, 1000);
+    
+    var tab = getMyTabs();
+    console.log(tab);
+   // setTimeout(findUnfollowers, 1000);
 
 })();
