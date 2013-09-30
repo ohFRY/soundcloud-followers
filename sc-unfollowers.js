@@ -46,22 +46,6 @@
 (function () {
 
 
-
-    var SoundcloudUsername = getUsername();
-
-    console.log(SoundcloudUsername);
-
-    var SoundcloudFollowers;
-    $.ajax({
-        url: 'http://api.soundcloud.com/users/'+SoundcloudUsername+'.json?&client_id=2062cfeb34e8085370a13162c547f4cc',
-        dataType: 'json',
-        async: false,
-        success: function(data) {
-            SoundcloudFollowers = data.followers_count;
-        }
-    });
-
-
     function getUsername(){
         var a = location.pathname.split("/");
         if ( a.length > 1 && a[1] == "mine" ) { return a; }
@@ -108,6 +92,21 @@
         });
 
     }
+
+
+    var SoundcloudUsername = getUsername();
+
+    console.log(SoundcloudUsername);
+
+    var SoundcloudFollowers;
+    $.ajax({
+        url: 'http://api.soundcloud.com/users/'+SoundcloudUsername+'.json?&client_id=2062cfeb34e8085370a13162c547f4cc',
+        dataType: 'json',
+        async: false,
+        success: function(data) {
+            SoundcloudFollowers = data.followers_count;
+        }
+    });
     
     var tab = getMyTabs();
     console.log(tab);
