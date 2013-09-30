@@ -95,7 +95,7 @@
 
 
     var SoundcloudUsername = getUsername();
-
+    var tab;
     var SoundcloudFollowers;
     $.ajax({
         url: 'http://api.soundcloud.com/users/'+SoundcloudUsername+'.json?&client_id=2062cfeb34e8085370a13162c547f4cc',
@@ -109,7 +109,7 @@
     
     
     setTimeout(function() {
-        var tab = getMyTabs();
+        tab = getMyTabs();
         if(tab.length >= SoundcloudFollowers) {
             setTimeout(findUnfollowers, 1000);
         }
