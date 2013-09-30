@@ -82,6 +82,7 @@
             var found = false;
             
             var v = $('.userBadge__userNameLink', value).text();
+            console.log(v);
             
             for(var i = 0; i < tab.length; i++) {
                 
