@@ -49,7 +49,7 @@
     function getUsername(){
         var a = location.pathname.split("/");
         if ( a.length > 1 && a[1] == "mine" ) { return a; }
-        return null;
+        return a;
     }
 
     function getMyTab(tab, offset){
