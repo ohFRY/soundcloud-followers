@@ -110,6 +110,8 @@
     
     setTimeout(function() {
         var tab = getMyTabs();
+        console.log(tab.length);
+        console.log(SoundcloudFollowers);
         if(tab.length == SoundcloudFollowers-1) {
             console.log("launched");
             setTimeout(findUnfollowers, 1000);
