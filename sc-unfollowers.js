@@ -90,8 +90,6 @@
         $('.usersList__item').each(function(key, value) {
             var found = false;
 
-            console.log($('.userBadge__userNameLink', value).text());
-
             for(var i = 0; i < tab.length; i++) {
                 
                 console.log(tab[i].username);
