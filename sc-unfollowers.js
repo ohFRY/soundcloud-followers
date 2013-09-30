@@ -90,11 +90,11 @@
         $('.usersList__item').each(function(key, value) {
             var found = false;
 
-            console.log($('.userBadge__userNameLink', value).text(););
+            console.log($('.userBadge__userNameLink', value).text());
 
             for(var i = 0; i < tab.length; i++) {
                 
-                console.log(tab[i].username;);
+                console.log(tab[i].username);
                 if(tab[i].username == $('.userBadge__userNameLink', value).text()) found = true;
             }
             if (!found) {
