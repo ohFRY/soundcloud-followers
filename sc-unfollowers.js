@@ -112,7 +112,8 @@
         tab = getMyTabs();
         if(tab.length >= SoundcloudFollowers) {
             console.log("start");
-            setTimeout(findUnfollowers, 1000);
+            console.log($('.userBadge__userNameLink', value).text());
+           // setTimeout(findUnfollowers, 1000);
         }
     } ,1);
 
