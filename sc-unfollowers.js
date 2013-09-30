@@ -53,7 +53,7 @@
     $.ajax({
         url: 'http://api.soundcloud.com/users/'+SoundcloudUsername+'.json?&client_id=2062cfeb34e8085370a13162c547f4cc',
         dataType: 'json',
-        async: true,
+        async: false,
         success: function(data) {
             SoundcloudFollowers = data.followers_count;
         }
@@ -89,11 +89,16 @@
     	var tab = getMyTabs();
         $('.usersList__item').each(function(key, value) {
             var found = false;
+
+            console.log($('.userBadge__userNameLink', value).text(););
+
             for(var i = 0; i < tab.length; i++) {
+                
+                console.log(tab[i].username;);
                 if(tab[i].username == $('.userBadge__userNameLink', value).text()) found = true;
             }
             if (!found) {
-                $('.sc-truncate', value).append('<span style="color:#F33">not following back</span>');
+                $('.sc-truncate', value).append('<span style="color:#F33;size:small">not following back</span>');
             }
         });
 
