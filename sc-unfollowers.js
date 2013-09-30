@@ -80,11 +80,13 @@
         
         $('.usersList__item').each(function(key, value) {
             var found = false;
-
+            
+            var v = $('.userBadge__userNameLink', value).text();
+            
             for(var i = 0; i < tab.length; i++) {
                 
                 
-                if(tab[i].username == $('.userBadge__userNameLink', value).text()) found = true;
+                if(tab[i].username == v) found = true;
             }
             if (!found) {
                 $('.sc-truncate', value).append('<span style="color:#F33;size:small">not following back</span>');
@@ -110,9 +112,9 @@
     
     setTimeout(function() {
         tab = getMyTabs();
+        console.log(tab.length);
         if(tab.length >= SoundcloudFollowers) {
             console.log("start");
-            console.log($('.userBadge__userNameLink', value));
            // setTimeout(findUnfollowers, 1000);
         }
     } ,1);
