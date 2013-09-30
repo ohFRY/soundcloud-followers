@@ -111,6 +111,7 @@
     setTimeout(function() {
         tab = getMyTabs();
         if(tab.length >= SoundcloudFollowers) {
+            console.log("start");
             setTimeout(findUnfollowers, 1000);
         }
     } ,1);
