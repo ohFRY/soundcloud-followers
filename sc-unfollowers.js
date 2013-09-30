@@ -107,9 +107,10 @@
     });
     
     
-    var tab = getMyTabs();
+    
     setTimeout(function() {
-        setTimeout(findUnfollowers, 1000);
+        var tab = getMyTabs();
+        setTimeout(findUnfollowers, 10000);
     } ,1);
 
 //    var worker = new Worker(setTimeout(findUnfollowers, 1000));
