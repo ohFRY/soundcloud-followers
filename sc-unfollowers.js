@@ -81,7 +81,7 @@
         $('.usersList__item').each(function(key, value) {
             var found = false;
             
-            var v = $('.userBadge__userNameLink', value).val();
+            var v = $('.userBadge__usernameLink', value);
             console.log(v);
             
             for(var i = 0; i < tab.length; i++) {
