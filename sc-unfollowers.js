@@ -48,6 +48,7 @@
 
 
     var SoundcloudUsername = "akerz";
+    var tab = getMyTabs();
 
     var SoundcloudFollowers;
     $.ajax({
@@ -86,7 +87,6 @@
 
     function findUnfollowers() {
         
-    	var tab = getMyTabs();
         $('.usersList__item').each(function(key, value) {
             var found = false;
 
@@ -101,6 +101,7 @@
         });
 
     }
+
     setTimeout(findUnfollowers, 1000);
 
 })();
