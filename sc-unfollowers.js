@@ -96,8 +96,6 @@
 
     var SoundcloudUsername = getUsername();
 
-    console.log(SoundcloudUsername);
-
     var SoundcloudFollowers;
     $.ajax({
         url: 'http://api.soundcloud.com/users/'+SoundcloudUsername+'.json?&client_id=2062cfeb34e8085370a13162c547f4cc',
@@ -108,8 +106,13 @@
         }
     });
     
+    
     var tab = getMyTabs();
-    console.log(tab);
-   // setTimeout(findUnfollowers, 1000);
+    setTimeout(function() {
+        setTimeout(findUnfollowers, 1000);
+    } ,1);
+
+//    var worker = new Worker(setTimeout(findUnfollowers, 1000));
+
 
 })();
