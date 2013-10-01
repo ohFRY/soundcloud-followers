@@ -39,7 +39,6 @@
  * @version 0.1
  */
 /*
- * INSTALL: change SoundcloudUsername variable by your username on SoundCloud
  *
  * USAGE:   run this script when you are on https://soundcloud.com/{your username}/following
  */
