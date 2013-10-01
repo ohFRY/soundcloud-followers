@@ -78,16 +78,20 @@
 
     function findUnfollowers() {
         
+        var listFollowing = $('.userBadge__usernameLink').text();
+
         $('.usersList__item').each(function(key, value) {
             var found = false;
             
-            var v = $('.userBadge__usernameLink', value);
-            console.log(v);
+           // var v = $('.userBadge__usernameLink', value);
+            
             
             for(var i = 0; i < tab.length; i++) {
+                if(listFollowing.contains($('.userBadge__usernameLink', value))){
+                    found = true;
+                }
                 
-                
-                if(tab[i].username == v) found = true;
+                //if(tab[i].username == v) found = true;
             }
             if (!found) {
                 $('.sc-truncate', value).append('<span style="color:#F33;size:small">not following back</span>');
