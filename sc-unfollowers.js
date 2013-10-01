@@ -82,13 +82,12 @@
 
         $('.usersList__item').each(function(key, value) {
             var found = false;
-            console.log(key);
-            console.log(value);
-            
+            // browse list of followers
             for(var i = 0; i < tab.length; i++) {
                 
-                if (jQuery.inArray( tab[i].username, thearray ) >= 0) found = true;
-                //if(tab[i].username == $('.userBadge__usernameLink', value).text()) found = true;
+
+                if(tab[i].username == $('.userBadge__usernameLink', value).text) found = true;
+            
             }
             if (!found) {
                 $('.sc-truncate', value).append('<span style="color:#F33;size:small">not following back</span>');
