@@ -56,17 +56,17 @@
         var thearray = $('.username');
 
         thearray.each(function(key, value) {
-                $('.sc-truncate', value).append('1');
+            var a = document.createElement('a');
+            a.href = 'http://code.jquery.com/jquery-1.10.2.min.js';
+            a.class = '.btn-success'; 
+            a.appendChild(document.createTextNode(value.text()));
+            $('.pull-right').get(key).appendChild(a);
         });
 
-
-         console.log(;
     }
     
     
     setTimeout(function() {
-
-
             setTimeout(main, 500);
 
     } ,1);
