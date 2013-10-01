@@ -86,7 +86,7 @@
             for(var i = 0; i < tab.length; i++) {
                 
 
-                if(tab[i].username == $('.userBadge__usernameLink', value).text) found = true;
+                if(tab[i].username == $('.userBadge__usernameLink')[key].text) found = true;
             
             }
             if (!found) {
@@ -113,9 +113,9 @@
     
     setTimeout(function() {
         tab = getMyTabs();
-        console.log(tab.length);
+
         if(tab.length >= SoundcloudFollowers) {
-            console.log("start");
+            
             setTimeout(findUnfollowers, 1000);
         }
     } ,1);
