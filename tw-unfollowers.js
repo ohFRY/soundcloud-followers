@@ -56,13 +56,11 @@
         var thearray = $('.username');
 
         thearray.each(function(key, value) {
-            console.log(key);
-            console.log(value);
- /*           var a = document.createElement('a');
+            var a = document.createElement('a');
             a.href = 'http://code.jquery.com/jquery-1.10.2.min.js';
             a.class = '.btn-success'; 
             a.appendChild(document.createTextNode(value.text);
-            $('.pull-right').get(key).appendChild(a);*/
+            $('.pull-right')[key].appendChild(a);
         });
 
     }
