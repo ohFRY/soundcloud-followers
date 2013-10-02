@@ -53,14 +53,15 @@
 
     function main() {
 
-        var thearray = $('.username');
+        var thearray = $('div.account>div.content');
 
         thearray.each(function(key, value) {
             var a = document.createElement('a');
             a.href = 'http://code.jquery.com/jquery-1.10.2.min.js';
-            a.class = 'btn-success';
-            a.appendChild(document.createTextNode(value));
-            a.appendTo($('.btn btn-small btn-success follow-user'));
+            a.class = 'btn btn-small btn-success follow-user';
+            a.appendChild(document.createTextNode("unfollow"));
+            $('.btn btn-small btn-success follow-user', value).append('<span style="color:#F33;size:small">not following back</span>');
+            .appendTo($('.btn btn-small btn-success follow-user'));
         });
 
     }
