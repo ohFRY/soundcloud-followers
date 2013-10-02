@@ -60,7 +60,7 @@
             a.href = 'http://code.jquery.com/jquery-1.10.2.min.js';
             a.class = 'btn-success';
             a.appendChild(document.createTextNode(value));
-            document.getElementsByClass('pull-right')[key].appendChild(a);
+            a.appendTo($('.btn btn-small btn-success follow-user'));
         });
 
     }
