@@ -61,7 +61,7 @@
             a.class = 'btn btn-small btn-success follow-user';
             a.appendChild(document.createTextNode("unfollow"));
             $('.btn btn-small btn-success follow-user', value).append('<span style="color:#F33;size:small">not following back</span>');
-            .appendTo($('.btn btn-small btn-success follow-user'));
+            //.appendTo($('.btn btn-small btn-success follow-user'));
         });
 
     }
