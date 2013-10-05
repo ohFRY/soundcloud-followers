@@ -53,16 +53,19 @@
 
     function main() {
 
-        var thearray = $('div.account>div.content');
+            $('.pull-right').each(function(key, value) {
+                 
+                $(this)
+                    .append($('<a>unfollow</a>')
+                        .attr("href", "http://twitter.com/"+($(".username b").html()) )
+                        .attr("target", "_blank")
+                        .addClass("btn btn-small btn-success follow-user")
+                    )
+                ;
 
-        thearray.each(function(key, value) {
-            var a = document.createElement('a');
-            a.href = 'http://code.jquery.com/jquery-1.10.2.min.js';
-            a.class = 'btn btn-small btn-success follow-user';
-            a.appendChild(document.createTextNode("unfollow"));
-            $('.btn btn-small btn-success follow-user', value).append('<span style="color:#F33;size:small">not following back</span>');
-            //.appendTo($('.btn btn-small btn-success follow-user'));
-        });
+            });
+
+       
 
     }
     
