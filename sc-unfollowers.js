@@ -54,7 +54,7 @@
     function getMyTab(tab, offset){
     	var tabb;
     	$.ajax({
-        	url: 'https://api.soundcloud.com/users/' + SoundcloudUsername + '/followers.json?limit=199&offset='+offset+'&client_id=2062cfeb34e8085370a13162c547f4cc',
+        	url: 'https://api.soundcloud.com/users/' + SoundcloudUsername + '/followers.json?limit=199&offset='+offset+'&client_id=c431d1033b896faa10f2f5c7eeb8bb9e',//2062cfeb34e8085370a13162c547f4cc',
             dataType: 'json',
             async: false,
             success: function(data) {
@@ -100,7 +100,7 @@
     var tab;
     var SoundcloudFollowers;
     $.ajax({
-        url: 'https://api.soundcloud.com/users/'+SoundcloudUsername+'.json?&client_id=2062cfeb34e8085370a13162c547f4cc',
+        url: 'https://api.soundcloud.com/users/'+SoundcloudUsername+'.json?&client_id=c431d1033b896faa10f2f5c7eeb8bb9e',//2062cfeb34e8085370a13162c547f4cc',
         dataType: 'json',
         async: false,
         success: function(data) {
